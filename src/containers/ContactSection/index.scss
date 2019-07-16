@@ -1,0 +1,64 @@
+.contact-media {
+  &__subtitle-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: calc(70% - 112px);
+    border-radius: 16px;
+    background-color: white;
+    width: 70%;
+    padding: 13px 14px;
+
+    background-size: cover;
+    overflow: hidden;
+
+    color: #ffffff;
+    font-family: "Avenir Next";
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 43px;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  &__addon-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: calc(70% - 97px);
+    width: 70%;
+
+    color: #ffffff;
+    font-family: "Avenir Next";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: center;
+  }
+  .addon-left {
+    float: left;
+  }
+  .addon-right {
+    float: right;
+  }
+
+  &__social {
+    display: inline-block;
+  }
+
+  &__social-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: calc(70% - 78px);
+    width: 50%;
+    text-align: center;
+  }
+  .social-left {
+    float: left;
+  }
+  .social-right {
+    float: right;
+  }
+}

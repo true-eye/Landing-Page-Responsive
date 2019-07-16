@@ -1,0 +1,69 @@
+.section-title {
+  h2 {
+    color: #262626;
+    font-family: "Avenir Next";
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 63px;
+  }
+}
+
+.about-mobscreen {
+  width: 25%;
+  position: fixed;
+  left: calc(25% - 183px);
+  top: calc(50vh - 300px);
+}
+
+.about-mobscreen-backpattern {
+  width: 40%;
+  position: fixed;
+  left: 5%;
+  top: calc(50vh - 300px);
+}
+
+.about-bottom-container {
+  position: relative;
+  min-height: 600px;
+  padding: 40% 150px 0px 150px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+
+  &__title {
+    border-radius: 16px;
+    background-color: white;
+    padding: 0px;
+
+    background-size: cover;
+    overflow: hidden;
+
+    color: #ffffff;
+    font-family: "Avenir Next";
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 48px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+.about-bottom-container::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media only screen and (min-width: 768px) {
+  .about-bottom-container {
+    min-height: 760px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .about-bottom-container {
+    padding: 350px 56px 0px 56px;
+    &__subtitle {
+      font-size: 30px;
+    }
+  }
+}
