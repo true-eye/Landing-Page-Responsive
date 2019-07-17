@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { compose } from "recompose";
 import { connect } from "react-redux";
 import { userActions } from "../../actions";
+import RoundButton from "../../components/RoundButton";
 
+import "./index.scss";
 const { requestSignIn } = userActions;
+
 class HomeSection extends Component {
   componentDidMount() {}
 
@@ -92,7 +95,11 @@ class HomeSection extends Component {
             <div
               className="image"
               style={{ backgroundImage: "url('images/home_bg.png')" }}
-            />
+            >
+              <div className="btn_get_started_wrapper">
+                <RoundButton label="GET STARTED" id="btn_get_started" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
