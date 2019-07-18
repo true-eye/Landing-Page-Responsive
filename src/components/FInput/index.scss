@@ -1,0 +1,17 @@
+.finput {
+  color: #2065ff;
+  font-family: "Avenir Next";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+
+  border: none;
+  border-bottom: 3px solid #d8d8d8;
+  outline: none;
+}
+
+.finput:focus {
+  border-bottom: 3px solid #2065ff;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}

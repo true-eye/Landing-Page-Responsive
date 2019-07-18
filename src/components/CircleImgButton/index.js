@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./index.scss";
 class CircleImgButton extends Component {
   static defaultProps = {
-    width: "54px"
+    width: "54px",
+    className: ""
   };
   componentDidMount() {}
 

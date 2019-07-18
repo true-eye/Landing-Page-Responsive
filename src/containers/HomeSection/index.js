@@ -5,6 +5,8 @@ import { userActions } from "../../actions";
 import RoundButton from "../../components/RoundButton";
 
 import "./index.scss";
+import FLabel from "../../components/FLabel";
+import FInput from "../../components/FInput";
 const { requestSignIn } = userActions;
 
 class HomeSection extends Component {
@@ -80,13 +82,21 @@ class HomeSection extends Component {
                   Flipptap is a social networking app matching jobs in Canada
                   for students, professionals and international skilled workers.
                 </p>
-                <a
-                  href="#"
-                  className="btn btn-l btn-dark-outline"
-                  id="notify-trigger"
-                >
-                  <span className="btn-caption">Notify me</span>
-                </a>
+                <div className="sign-up-form">
+                  <div className="sign-up-form__inline-grow">
+                    <FLabel label="Full Name" />
+                    <FInput />
+                  </div>
+                  <div className="sign-up-form__inline-grow">
+                    <FLabel label="Email ID" />
+                    <FInput />
+                  </div>
+                  <RoundButton label="TRY FOR FREE" />
+                </div>
+                <p className="headline-bottom-text">
+                  By signing up, you agree to Flipptap’s Terms and Privacy
+                  Policy.
+                </p>
               </div>
             </div>
           </div>
