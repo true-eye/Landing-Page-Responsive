@@ -1473,7 +1473,7 @@ form textarea {
 }
 .socials {
   position: absolute;
-  bottom: 4rem;
+  bottom: 50px;
   left: 10%;
 }
 .socials::after {
@@ -1487,7 +1487,7 @@ form textarea {
 }
 .socials ul li {
   display: inline-block;
-  margin: 0 2.4rem 0 0;
+  margin: 0 0 0 0;
 }
 .socials ul li a {
   display: block;
@@ -1509,15 +1509,15 @@ form textarea {
   .socials {
     position: absolute;
     right: auto;
-    bottom: 4rem;
-    left: 6.4rem;
+    bottom: 50px;
+    left: 10%;
   }
   .socials ul {
     display: block;
   }
   .socials ul li {
     display: inline-block;
-    margin: 0 2.4rem 0 0;
+    margin: 0 0 0 0;
   }
   .socials ul li a {
     display: block;

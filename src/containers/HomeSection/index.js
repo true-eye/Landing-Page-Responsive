@@ -7,6 +7,7 @@ import RoundButton from "../../components/RoundButton";
 import "./index.scss";
 import FLabel from "../../components/FLabel";
 import FInput from "../../components/FInput";
+import CircleImgButton from "../../components/CircleImgButton";
 const { requestSignIn } = userActions;
 
 class HomeSection extends Component {
@@ -52,24 +53,32 @@ class HomeSection extends Component {
               <div className="socials">
                 <ul>
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank">
-                      <i className="icon ion-social-facebook" />
-                    </a>
+                    <CircleImgButton
+                      src="images/social_facebook.png"
+                      className="social_button"
+                      href="https://www.facebook.com/"
+                    />
                   </li>
                   <li>
-                    <a href="https://twitter.com/" target="_blank">
-                      <i className="icon ion-social-twitter" />
-                    </a>
+                    <CircleImgButton
+                      src="images/social_skype.png"
+                      className="social_button"
+                    />
                   </li>
                   <li>
-                    <a href="https://dribbble.com/" target="_blank">
-                      <i className="icon ion-social-dribbble-outline" />
-                    </a>
+                    <CircleImgButton
+                      src="images/social_instagram.png"
+                      className="social_button"
+                    />
                   </li>
                   <li>
-                    <a href="https://github.com/" target="_blank">
-                      <i className="icon ion-social-github" />
-                    </a>
+                    <CircleImgButton
+                      src="images/social_share.png"
+                      className="social_button"
+                    />
+                  </li>
+                  <li>
+                    <div className="social-line" />
                   </li>
                 </ul>
               </div>
