@@ -9,7 +9,7 @@ class FLabel extends Component {
   render() {
     const { width, className, id, label } = this.props;
     return (
-      <label class={"flabel " + className} id={id}>
+      <label className={"flabel " + className} id={id}>
         {label}
       </label>
     );

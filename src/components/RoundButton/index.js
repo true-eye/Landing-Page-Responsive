@@ -11,7 +11,7 @@ class RoundButton extends Component {
     const { width, className, id, label } = this.props;
     return (
       <button
-        class={"button round-button " + className}
+        className={"button round-button " + className}
         id={id}
         style={{ width: width }}
       >

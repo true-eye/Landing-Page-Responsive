@@ -160,7 +160,7 @@ class WorksSection extends Component {
                 className="mCSB_scrollTools mCSB_2_scrollbar mCS-light mCSB_scrollTools_vertical"
                 style={{ display: "block" }}
               >
-                <div class="mCSB_draggerContainer">
+                <div className="mCSB_draggerContainer">
                   <div
                     id="mCSB_2_dragger_vertical"
                     className="mCSB_dragger"

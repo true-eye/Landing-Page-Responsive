@@ -8,7 +8,7 @@ class FInput extends Component {
 
   render() {
     const { width, className, id, value } = this.props;
-    return <input type="text" class={"finput " + className} id={id} />;
+    return <input type="text" className={"finput " + className} id={id} />;
   }
 }
 
