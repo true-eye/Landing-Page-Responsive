@@ -18,16 +18,17 @@ class MainPage extends Component {
   componentDidMount() {}
 
   t = s => {
+    console.log(s);
     return translate(this.props.currentLang, s);
   };
 
   render() {
     return (
       <>
-        <HomeSection t={this.t} />
-        <AboutSection t={this.t} />
-        <WorksSection t={this.t} />
-        <ContactSection t={this.t} />
+        <HomeSection t={this.t} currentLang={this.props.currentLang} />
+        <AboutSection t={this.t} currentLang={this.props.currentLang} />
+        <WorksSection t={this.t} currentLang={this.props.currentLang} />
+        <ContactSection t={this.t} currentLang={this.props.currentLang} />
       </>
     );
   }

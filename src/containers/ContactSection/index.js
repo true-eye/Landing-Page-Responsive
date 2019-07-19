@@ -12,6 +12,7 @@ class ContactSection extends Component {
   componentDidMount() {}
 
   render() {
+    const { t } = this.props;
     return (
       <section id="contact" className="content-section contact">
         <div className="container-fluid fullheight">
@@ -38,16 +39,9 @@ class ContactSection extends Component {
                   </div>
 
                   <div className="content-block section-title">
-                    <h2>Get a job fast</h2>
-                    <span>
-                      Subscribe now to get jobs and opportunities in Canada.
-                    </span>
-                    <p className="text-m">
-                      We’re in beta, soon to be released in October 2019. Join
-                      the community to discover the startups and companies in
-                      Canada hiring now, tips & tricks on becoming an
-                      entrepreneur, becoming an expat and more.
-                    </p>
+                    <h2>{t("contact.section-title.h2")}</h2>
+                    <span>{t("contact.section-title.span")}</span>
+                    <p className="text-m">{t("contact.section-title.p")}</p>
 
                     <div className="col-md-10 contact-form">
                       <div className="row">
@@ -57,7 +51,7 @@ class ContactSection extends Component {
                         >
                           <TextField
                             id="contact-fullname"
-                            label="Full Name"
+                            label={t("contact.form.fullname")}
                             defaultValue="Cameroon Masse"
                             // className={classes.textField}
                             // value={values.name}
@@ -70,7 +64,7 @@ class ContactSection extends Component {
                         <div className="col-md-6">
                           <TextField
                             id="contact-email"
-                            label="Email"
+                            label={t("contact.form.email")}
                             // className={classes.textField}
                             margin="normal"
                             style={{ width: "100%" }}
@@ -80,13 +74,13 @@ class ContactSection extends Component {
                       <div className="row">
                         <TextField
                           id="contact-city"
-                          label="City you would like to see"
+                          label={t("contact.form.city")}
                           // className={classes.textField}
                           margin="normal"
                           style={{ width: "100%" }}
                         />
                       </div>
-                      <RoundButton label="LEARN MORE" />
+                      <RoundButton label={t("contact.button.learn-more")} />
                       <div className="contact-footer">
                         <ul>
                           <li>

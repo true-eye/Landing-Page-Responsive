@@ -14,6 +14,7 @@ class WorksSection extends Component {
   componentDidMount() {}
 
   render() {
+    const { t } = this.props;
     return (
       <section id="works" className="content-section works">
         <div className="container-fluid fullheight">
@@ -62,24 +63,10 @@ class WorksSection extends Component {
                   </div>
 
                   <div className="content-block section-title">
-                    <h2>How to look for a job and network on Flipptap</h2>
-                    <span>
-                      Flipptap lets you share your story and career achievements
-                      through photos directly to your profile. Updating your
-                      resume, through daily professional accomplishments.
-                    </span>
-                    <p>
-                      Are you a student looking for part-time jobs or co-op
-                      opportunities? Are you an experienced professional looking
-                      to grow your network? Or are you a new immigrant to Canada
-                      looking for work?
-                    </p>
-                    <p>
-                      With Flipptap, use our unique filter tailored to suit your
-                      needs for both job searching and growing your professional
-                      network. Share photos of your career achievements to your
-                      professional profile.
-                    </p>
+                    <h2>{t("works.section-title.h2")}</h2>
+                    <span>{t("works.section-title.span")}</span>
+                    <p>{t("works.section-title.p1")}</p>
+                    <p>{t("works.section-title.p2")}</p>
                   </div>
                   <div className="content-block features">
                     <div className="col-xs-12 feature-item feature-item-left">
@@ -90,11 +77,8 @@ class WorksSection extends Component {
                         }}
                       />
                       <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>Filter</span>
-                        <p className="text-s">
-                          by location, salary, open work permit, reviews, job
-                          title etc.
-                        </p>
+                        <span>{t("works.feature-1.span")}</span>
+                        <p className="text-s">{t("works.feature-1.p")}</p>
                       </div>
                     </div>
 
@@ -106,13 +90,8 @@ class WorksSection extends Component {
                         }}
                       />
                       <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>Swipe Opportunities</span>
-                        <p className="text-s">
-                          Swipe through Job Stories to discover all the
-                          information you need. See photos of team culture,
-                          reviews, location etc. If you’re interested and want
-                          to find out more, swipe right to informally apply.
-                        </p>
+                        <span>{t("works.feature-2.span")}</span>
+                        <p className="text-s">{t("works.feature-2.p")}</p>
                       </div>
                     </div>
 
@@ -124,12 +103,8 @@ class WorksSection extends Component {
                         }}
                       />
                       <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>Chat Directly</span>
-                        <p className="text-s">
-                          If you match with the employer, you will be able to
-                          directly chat with the hiring team to find out more
-                          information, schedule interviews, etc.
-                        </p>
+                        <span>{t("works.feature-3.span")}</span>
+                        <p className="text-s">{t("works.feature-3.p")}</p>
                       </div>
                     </div>
                   </div>
@@ -141,15 +116,16 @@ class WorksSection extends Component {
                     }}
                   >
                     <div className="col-xl-12 works-bottom-container__title">
-                      Empowering <br />
-                      Job Seekers Everywhere
+                      {t("works.bottom-1")}
+                      <br />
+                      {t("works.bottom-2")}
                     </div>
                     <div className="col-md-8" style={{ marginTop: "30px" }}>
                       <div className="works-form">
                         <div className="works-form__inline-grow">
-                          <FLabel label="Email me when it's ready" />
+                          <FLabel label={t("works.form.label")} />
                         </div>
-                        <RoundButton label="SEND" />
+                        <RoundButton label={t("works.form.button")} />
                       </div>
                     </div>
                   </div>

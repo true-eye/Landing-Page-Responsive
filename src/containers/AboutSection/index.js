@@ -14,6 +14,7 @@ class AboutSection extends Component {
   componentDidMount() {}
 
   render() {
+    const { t } = this.props;
     return (
       <section id="about" className="content-section about">
         <div className="container-fluid fullheight">
@@ -54,19 +55,9 @@ class AboutSection extends Component {
               </div>
 
               <div className="content-block section-title">
-                <h2>
-                  A job search is depressing; so we introduced Job Stories
-                </h2>
-                <span>
-                  Flipptap created Job Stories so can discover more about
-                  companies, than just a job description.
-                </span>
-                <p>
-                  A job search is very personal. As millenials, whether you’re
-                  looking for full-time or part time jobs, work-abroad
-                  opportunities, remote jobs, contract roles or co-op
-                  opportunities, you’re seeking:
-                </p>
+                <h2>{t("about.section-title.h2")}</h2>
+                <span>{t("about.section-title.span")}</span>
+                <p>{t("about.section-title.p")}</p>
               </div>
               <div className="content-block features">
                 <div className="col-xs-12 feature-item feature-item-left">
@@ -78,7 +69,7 @@ class AboutSection extends Component {
                   />
                   <div className="col-xs-12 col-sm-6 feature-description">
                     <h3>01</h3>
-                    <span>A position that fits your needs.</span>
+                    <span>{t("about.feature-1.span")}</span>
                   </div>
                 </div>
 
@@ -91,7 +82,7 @@ class AboutSection extends Component {
                   />
                   <div className="col-xs-12 col-sm-6 feature-description">
                     <h3>02</h3>
-                    <span>Suits your personality & lifestyle.</span>
+                    <span>{t("about.feature-2.span")}</span>
                   </div>
                 </div>
 
@@ -104,9 +95,7 @@ class AboutSection extends Component {
                   />
                   <div className="col-xs-12 col-sm-6 feature-description">
                     <h3>03</h3>
-                    <span>
-                      Awesome company culture that's reflected in reviews
-                    </span>
+                    <span>{t("about.feature-3.span")}</span>
                   </div>
                 </div>
 
@@ -119,11 +108,8 @@ class AboutSection extends Component {
                   />
                   <div className="col-xs-12 col-sm-6 feature-description">
                     <h3>04</h3>
-                    <span>A great location</span>
-                    <p className="text-s">
-                      An employer that is close enough to commute or relocate
-                      without impacting your family, friends & daily life.
-                    </p>
+                    <span>{t("about.feature-4.span")}</span>
+                    <p className="text-s">{t("about.feature-4.p")}</p>
                   </div>
                 </div>
                 <div className="col-xs-12 feature-item feature-item-left">
@@ -135,12 +121,8 @@ class AboutSection extends Component {
                   />
                   <div className="col-xs-12 col-sm-6 feature-description">
                     <h3>05</h3>
-                    <span>Ability to Work Abroad</span>
-                    <p className="text-s">
-                      An employer that is willing to offer open work permits,
-                      remote opportunities or work-abroad experience. #expat
-                      #digitalnomad
-                    </p>
+                    <span>{t("about.feature-5.span")}</span>
+                    <p className="text-s">{t("about.feature-5.p")}</p>
                   </div>
                 </div>
               </div>
@@ -152,19 +134,18 @@ class AboutSection extends Component {
                 }}
               >
                 <div className="col-xs-12 about-bottom-container__title">
-                  Guess What - Rarely is this Information Included in the Job
-                  Description!
+                  {t("about.bottom-1")}
                   <br />
                   <br />
-                  That’s where Flipptap comes in....
+                  {t("about.bottom-2")}
                 </div>
                 <div className="col-md-10" style={{ marginTop: "30px" }}>
                   <div className="sign-up-form">
                     <div className="sign-up-form__inline-grow">
-                      <FLabel label="Email" />
+                      <FLabel label={t("about.form.email")} />
                       <FInput />
                     </div>
-                    <RoundButton label="GET EARLY ACCESS" />
+                    <RoundButton label={t("about.form.get-early-access")} />
                   </div>
                 </div>
               </div>

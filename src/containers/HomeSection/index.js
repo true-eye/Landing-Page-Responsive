@@ -172,8 +172,7 @@ class HomeSection extends Component {
 }
 
 const mapStateToProps = state => ({
-  auth: state.authentication,
-  currentLang: state.langReducer.currentLang
+  auth: state.authentication
 });
 
 const mapDispatchToProps = dispatch => {
