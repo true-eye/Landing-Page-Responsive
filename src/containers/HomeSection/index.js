@@ -1,29 +1,48 @@
 import React, { Component } from "react";
 import { compose } from "recompose";
 import { connect } from "react-redux";
-import { langActions } from "../../actions";
+import { langActions, userActions } from "../../actions";
 import RoundButton from "../../components/RoundButton";
 
 import FLabel from "../../components/FLabel";
 import FInput from "../../components/FInput";
 import CircleImgButton from "../../components/CircleImgButton";
 import TextField from "@material-ui/core/TextField";
+
 import "./index.scss";
 const { changeLang } = langActions;
+const { requestSignUp } = userActions;
 
 class HomeSection extends Component {
   state = {
-    showDropdown: false
+    showDropdown: false,
+    user: {
+      name: "",
+      email: ""
+    }
   };
   constructor(props) {
     super(props);
     this.onChangeLang = this.onChangeLang.bind(this);
+    this.onSignup = this.onSignup.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {}
 
   onChangeLang = lang => {
     this.props.changeLang(lang);
+  };
+
+  onSignup = () => {
+    console.log(this.state.user);
+    this.props.requestSignUp(this.state.user);
+  };
+
+  handleChange = (ev, key) => {
+    let user = { ...this.state.user };
+    user[key] = ev.target.value;
+    this.setState({ user });
   };
 
   render() {
@@ -39,6 +58,8 @@ class HomeSection extends Component {
       en: 0,
       fr: 1
     };
+
+    const { loading } = this.props.auth;
 
     return (
       <section id="main" className="main loaded">
@@ -150,6 +171,8 @@ class HomeSection extends Component {
                       id="home-fullname"
                       label={t("home.sign-up-form.fullname")}
                       margin="normal"
+                      value={this.state.user.name}
+                      onChange={ev => this.handleChange(ev, "name")}
                       style={{ width: "100%" }}
                     />
                   </div>
@@ -158,10 +181,17 @@ class HomeSection extends Component {
                       id="home-email"
                       label={t("home.sign-up-form.email")}
                       margin="normal"
+                      value={this.state.user.email}
+                      onChange={ev => this.handleChange(ev, "email")}
                       style={{ width: "100%" }}
                     />
                   </div>
-                  <RoundButton label={t("home.sign-up-form.button")} />
+                  <RoundButton
+                    label={t("home.sign-up-form.button")}
+                    onClick={this.onSignup}
+                    disabled={loading}
+                    loading={loading}
+                  />
                 </div>
                 <p className="headline-bottom-text">
                   {t("home.headline.headline-bottom-text")}
@@ -195,7 +225,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeLang: newLang => dispatch(changeLang(newLang))
+    changeLang: newLang => dispatch(changeLang(newLang)),
+    requestSignUp: user => dispatch(requestSignUp(user))
   };
 };
 

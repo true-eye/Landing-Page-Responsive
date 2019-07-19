@@ -18,7 +18,6 @@ class MainPage extends Component {
   componentDidMount() {}
 
   t = s => {
-    console.log(s);
     return translate(this.props.currentLang, s);
   };
 
