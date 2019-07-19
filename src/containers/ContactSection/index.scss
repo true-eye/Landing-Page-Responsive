@@ -62,3 +62,51 @@
     float: right;
   }
 }
+
+.contact-footer {
+  margin-top: 77px;
+  ul {
+    display: block;
+    position: relative;
+  }
+  ul li {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+  }
+  &__link {
+    display: block;
+    position: relative;
+    opacity: 0.2;
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+
+    text-decoration: none;
+  }
+  &__link:hover {
+    color: #2065ff;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.contact-form {
+  margin-top: 30px;
+  .MuiInputBase-root {
+    font-size: 16px !important;
+    color: #2065ff !important;
+  }
+  .MuiFormLabel-root {
+    font-size: 16px !important;
+  }
+  button {
+    margin-top: 15px;
+  }
+}

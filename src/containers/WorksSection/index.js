@@ -3,8 +3,11 @@ import { compose } from "recompose";
 import { connect } from "react-redux";
 import { userActions } from "../../actions";
 
-import "./index.scss";
 import CircleImgButton from "../../components/CircleImgButton";
+import RoundButton from "../../components/RoundButton";
+import FInput from "../../components/FInput";
+import FLabel from "../../components/FLabel";
+import "./index.scss";
 const { requestSignIn } = userActions;
 
 class WorksSection extends Component {
@@ -140,6 +143,14 @@ class WorksSection extends Component {
                     <div className="col-xl-12 works-bottom-container__title">
                       Empowering <br />
                       Job Seekers Everywhere
+                    </div>
+                    <div className="col-md-8" style={{ marginTop: "30px" }}>
+                      <div className="works-form">
+                        <div className="works-form__inline-grow">
+                          <FLabel label="Email me when it's ready" />
+                        </div>
+                        <RoundButton label="SEND" />
+                      </div>
                     </div>
                   </div>
                 </div>

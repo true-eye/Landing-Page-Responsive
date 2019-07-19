@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { compose } from "recompose";
 import { connect } from "react-redux";
 import { userActions } from "../../actions";
-import "./index.scss";
 import CircleImgButton from "../../components/CircleImgButton";
+import RoundButton from "../../components/RoundButton";
+import TextField from "@material-ui/core/TextField";
+import "./index.scss";
 const { requestSignIn } = userActions;
 
 class ContactSection extends Component {
@@ -46,70 +48,65 @@ class ContactSection extends Component {
                       Canada hiring now, tips & tricks on becoming an
                       entrepreneur, becoming an expat and more.
                     </p>
-                  </div>
 
-                  <div className="content-block contact-data">
-                    <div className="row">
-                      <div className="col-xs-12 col-sm-6 contact-data-item">
-                        <i className="icon ion-ios-location" />
-                        <p>
-                          11 West 53 Street
-                          <br />
-                          New York, NY
-                          <br />
-                          10019
-                        </p>
+                    <div className="col-md-10 contact-form">
+                      <div className="row">
+                        <div
+                          className="col-md-6"
+                          style={{ paddingRight: "10px" }}
+                        >
+                          <TextField
+                            id="contact-fullname"
+                            label="Full Name"
+                            defaultValue="Cameroon Masse"
+                            // className={classes.textField}
+                            // value={values.name}
+                            // onChange={handleChange("name")}
+                            margin="normal"
+                            style={{ width: "100%" }}
+                          />
+                        </div>
+
+                        <div className="col-md-6">
+                          <TextField
+                            id="contact-email"
+                            label="Email"
+                            // className={classes.textField}
+                            margin="normal"
+                            style={{ width: "100%" }}
+                          />
+                        </div>
                       </div>
-
-                      <div className="col-xs-12 col-sm-6 contact-data-item">
-                        <i className="icon ion-android-share-alt" />
+                      <div className="row">
+                        <TextField
+                          id="contact-city"
+                          label="City you would like to see"
+                          // className={classes.textField}
+                          margin="normal"
+                          style={{ width: "100%" }}
+                        />
+                      </div>
+                      <RoundButton label="LEARN MORE" />
+                      <div className="contact-footer">
                         <ul>
                           <li>
-                            <a href="https://www.facebook.com/" target="_blank">
-                              Facebook
+                            <a className="contact-footer__link">
+                              info@flipptap.com
                             </a>
                           </li>
                           <li>
-                            <a href="https://twitter.com/" target="_blank">
-                              Twitter
+                            <a className="contact-footer__link">
+                              Terms & Conditions
                             </a>
                           </li>
                           <li>
-                            <a href="https://dribbble.com/" target="_blank">
-                              Dribbble
+                            <a className="contact-footer__link">
+                              Privacy Policy
                             </a>
                           </li>
                         </ul>
                       </div>
                     </div>
-
-                    <div className="row">
-                      <div className="col-xs-12 col-sm-6 contact-data-item">
-                        <i className="icon ion-android-call" />
-                        <p>
-                          <a href="tel:+12127089400">+1 212-708-9400</a>
-                        </p>
-                      </div>
-
-                      <div className="col-xs-12 col-sm-6 contact-data-item">
-                        <i className="icon ion-edit" />
-                        <p>
-                          <a href="mailto:example@example.com?subject=Message%20from%20your%20site">
-                            example@example.com
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="contact-buttons">
-                    <a
-                      href="#"
-                      className="btn btn-l btn-dark-outline"
-                      id="contactform-trigger"
-                    >
-                      <span className="btn-caption">Write a line</span>
-                    </a>
                   </div>
                 </div>
               </div>
