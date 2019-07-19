@@ -40,6 +40,12 @@
   button {
     min-width: 150px;
   }
+  .MuiInput-underline:before {
+    display: none;
+  }
+}
+.sign-up-form__inline-grow:first-child {
+  padding-right: 12px;
 }
 .sign-up-form__inline-grow:first-child::after {
   content: "";
@@ -143,4 +149,247 @@
 
 .dropdown:hover .dropbtn {
   background-color: lightgray;
+}
+
+.main-intro {
+  .intro-mobile-gradient {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 281px;
+
+    background-image: linear-gradient(
+      to top,
+      rgba(8, 9, 17, 0) 0%,
+      rgba(8, 9, 18, 1) 26.66%,
+      rgba(9, 1, 19, 1) 88.24%,
+      rgba(7, 9, 17, 1) 100%
+    );
+
+    -webkit-animation: 0.8s ease-in-out 1 both itemsOpacity;
+    -moz-animation: 0.8s ease-in-out 1 both itemsOpacity;
+    animation: 0.8s ease-in-out 1 both itemsOpacity;
+    -webkit-animation: 0.5s cubic-bezier(0.05, 0.74, 0.39, 1) 0.8s 1 both
+      fadeInLeft;
+    animation: 0.5s cubic-bezier(0.05, 0.74, 0.39, 1) 0.8s 1 both fadeInLeft;
+  }
+  .intro-content {
+    .logo-mobile {
+      display: none;
+      margin-left: calc(50% - 67px);
+      top: 53px;
+      position: absolute;
+      z-index: 2;
+    }
+    .headline {
+      .sign-up-form {
+        .MuiFormControl-root {
+          margin-top: 0px;
+        }
+        .MuiInputBase-root {
+          font-size: 16px !important;
+          color: #2065ff !important;
+        }
+        .MuiFormLabel-root {
+          font-size: 16px !important;
+          color: #2065ff !important;
+        }
+      }
+    }
+  }
+
+  .bg-mobile {
+    display: none;
+    position: absolute;
+    top: 208px;
+    z-index: 1;
+
+    -webkit-animation: 0.8s ease-in-out 1 both itemsOpacity;
+    -moz-animation: 0.8s ease-in-out 1 both itemsOpacity;
+    animation: 0.8s ease-in-out 1 both itemsOpacity;
+    -webkit-animation: 0.5s cubic-bezier(0.05, 0.74, 0.39, 1) 0.8s 1 both
+      fadeInLeft;
+    animation: 0.5s cubic-bezier(0.05, 0.74, 0.39, 1) 0.8s 1 both fadeInLeft;
+  }
+}
+
+@media only screen and (max-width: 384px) {
+  .main-intro {
+    .intro-mobile-gradient {
+      display: inherit;
+      z-index: 2;
+    }
+    .bg-mobile {
+      display: inherit;
+    }
+    .intro-content {
+      padding: 130px 0px 100px 0px;
+      background: transparent;
+      z-index: 3;
+
+      .logo {
+        display: none;
+      }
+      .logo-mobile {
+        display: inherit;
+      }
+      .socials {
+        left: 18px;
+        bottom: 20px;
+        ul li img {
+          width: 48px !important;
+        }
+        .social-line {
+          width: 92px;
+          margin-bottom: 22px;
+        }
+      }
+      .headline {
+        padding: 0 34px;
+
+        h1 {
+          font-size: 23px;
+          line-height: 31px;
+          margin-top: 0px;
+          font-family: inherit;
+          color: rgba(255, 255, 255, 0.89);
+          margin-bottom: 4px;
+        }
+
+        .headline-text {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14px;
+          line-height: 21px;
+          margin-bottom: 234px;
+        }
+
+        .sign-up-form {
+          display: grid;
+
+          background: rgba(255, 255, 255, 0.9);
+          padding: 18.1px;
+          margin: 0px -12px;
+          border-radius: 20px;
+          border: none;
+
+          .MuiInputBase-input {
+            font-size: 18.9px;
+            line-height: 23px;
+          }
+
+          .sign-up-form__inline-grow:first-child::after {
+            display: none;
+          }
+
+          button {
+            padding: 18.9px;
+            font-size: 14.69px;
+            line-height: 18px;
+            margin-top: 9px;
+            font-family: "Lato";
+          }
+          .MuiInput-underline:before {
+            display: inherit;
+          }
+        }
+
+        .headline-bottom-text {
+          margin-top: 21px;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+  .main-media {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .main-intro {
+    .intro-mobile-gradient {
+      display: inherit;
+      z-index: 2;
+    }
+    .bg-mobile {
+      display: inherit;
+    }
+    .intro-content {
+      padding: 130px 0px 100px 0px;
+      background: transparent;
+      z-index: 3;
+
+      .logo {
+        display: none;
+      }
+      .logo-mobile {
+        display: inherit;
+      }
+      .socials {
+        left: 18px;
+        bottom: 20px;
+        ul li img {
+          width: 48px !important;
+        }
+        .social-line {
+          width: 92px;
+          margin-bottom: 22px;
+        }
+      }
+      .headline {
+        padding: 0 34px;
+
+        h1 {
+          font-size: 23px;
+          line-height: 31px;
+          margin-top: 0px;
+          font-family: inherit;
+          color: rgba(255, 255, 255, 0.89);
+          margin-bottom: 4px;
+        }
+
+        .headline-text {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14px;
+          line-height: 21px;
+          margin-bottom: 234px;
+        }
+
+        .sign-up-form {
+          display: grid;
+
+          background: rgba(255, 255, 255, 0.9);
+          padding: 18.1px;
+          margin: 0px -12px;
+          border-radius: 20px;
+          border: none;
+
+          .MuiInputBase-input {
+            font-size: 18.9px;
+            line-height: 23px;
+          }
+
+          .sign-up-form__inline-grow:first-child::after {
+            display: none;
+          }
+
+          button {
+            padding: 18.9px;
+            font-size: 14.69px;
+            line-height: 18px;
+            margin-top: 9px;
+            font-family: "Lato";
+          }
+        }
+
+        .headline-bottom-text {
+          margin-top: 21px;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+  .main-media {
+    display: none;
+  }
 }

@@ -7,6 +7,7 @@ import RoundButton from "../../components/RoundButton";
 import FLabel from "../../components/FLabel";
 import FInput from "../../components/FInput";
 import CircleImgButton from "../../components/CircleImgButton";
+import TextField from "@material-ui/core/TextField";
 import "./index.scss";
 const { changeLang } = langActions;
 
@@ -43,12 +44,21 @@ class HomeSection extends Component {
       <section id="main" className="main loaded">
         <div className="container-fluid fullheight">
           <div className="main-intro col-xs-12 col-lg-6">
+            <div className="intro-mobile-gradient" />
+
+            <div className="bg-mobile">
+              <img src="images/home_bg.png" style={{ width: "100%" }} />
+            </div>
             <div className="intro-content">
               <div className="logo">
                 <img
                   src="images/logo.png"
-                  alt="Flipptap comming soon"
-                  title="Flipptap comming soon"
+                  style={{ width: "134px", height: "30px" }}
+                />
+              </div>
+              <div className="logo-mobile">
+                <img
+                  src="images/logo_mobile.png"
                   style={{ width: "134px", height: "30px" }}
                 />
               </div>
@@ -136,12 +146,20 @@ class HomeSection extends Component {
                 </p>
                 <div className="sign-up-form">
                   <div className="sign-up-form__inline-grow">
-                    <FLabel label={t("home.sign-up-form.fullname")} />
-                    <FInput />
+                    <TextField
+                      id="home-fullname"
+                      label={t("home.sign-up-form.fullname")}
+                      margin="normal"
+                      style={{ width: "100%" }}
+                    />
                   </div>
                   <div className="sign-up-form__inline-grow">
-                    <FLabel label={t("home.sign-up-form.email")} />
-                    <FInput />
+                    <TextField
+                      id="home-email"
+                      label={t("home.sign-up-form.email")}
+                      margin="normal"
+                      style={{ width: "100%" }}
+                    />
                   </div>
                   <RoundButton label={t("home.sign-up-form.button")} />
                 </div>

@@ -7,6 +7,7 @@ import CircleImgButton from "../../components/CircleImgButton";
 import RoundButton from "../../components/RoundButton";
 import FInput from "../../components/FInput";
 import FLabel from "../../components/FLabel";
+import FGallery from "../../components/FGallery";
 import "./index.scss";
 const { requestSignIn } = userActions;
 
@@ -15,6 +16,26 @@ class WorksSection extends Component {
 
   render() {
     const { t } = this.props;
+    const galleries = [
+      {
+        image_position: "left",
+        image_url: "images/works_1.png",
+        heading: t("works.feature-1.span"),
+        subheading: t("works.feature-1.p")
+      },
+      {
+        image_position: "right",
+        image_url: "images/works_2.png",
+        heading: t("works.feature-2.span"),
+        subheading: t("works.feature-2.p")
+      },
+      {
+        image_position: "left",
+        image_url: "images/works_3.png",
+        heading: t("works.feature-3.span"),
+        subheading: t("works.feature-3.p")
+      }
+    ];
     return (
       <section id="works" className="content-section works">
         <div className="container-fluid fullheight">
@@ -69,44 +90,7 @@ class WorksSection extends Component {
                     <p>{t("works.section-title.p2")}</p>
                   </div>
                   <div className="content-block features">
-                    <div className="col-xs-12 feature-item feature-item-left">
-                      <div
-                        className="col-xs-12 col-sm-6 feature-image "
-                        style={{
-                          backgroundImage: "url('images/works_1.png')"
-                        }}
-                      />
-                      <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>{t("works.feature-1.span")}</span>
-                        <p className="text-s">{t("works.feature-1.p")}</p>
-                      </div>
-                    </div>
-
-                    <div className="col-xs-12 feature-item feature-item-right">
-                      <div
-                        className="col-xs-12 col-sm-6 feature-image"
-                        style={{
-                          backgroundImage: "url('images/works_2.png')"
-                        }}
-                      />
-                      <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>{t("works.feature-2.span")}</span>
-                        <p className="text-s">{t("works.feature-2.p")}</p>
-                      </div>
-                    </div>
-
-                    <div className="col-xs-12 feature-item feature-item-left">
-                      <div
-                        className="col-xs-12 col-sm-6 feature-image"
-                        style={{
-                          backgroundImage: "url('images/works_3.png')"
-                        }}
-                      />
-                      <div className="col-xs-12 col-sm-6 feature-description">
-                        <span>{t("works.feature-3.span")}</span>
-                        <p className="text-s">{t("works.feature-3.p")}</p>
-                      </div>
-                    </div>
+                    <FGallery galleries={galleries} />
                   </div>
 
                   <div

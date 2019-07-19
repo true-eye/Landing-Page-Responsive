@@ -7,6 +7,8 @@ import CircleImgButton from "../../components/CircleImgButton";
 import RoundButton from "../../components/RoundButton";
 import FInput from "../../components/FInput";
 import FLabel from "../../components/FLabel";
+import FGallery from "../../components/FGallery";
+import ScrollUpButton from "react-scroll-up-button";
 import "./index.scss";
 const { requestSignIn } = userActions;
 
@@ -15,8 +17,63 @@ class AboutSection extends Component {
 
   render() {
     const { t } = this.props;
+    const galleries = [
+      {
+        image_position: "left",
+        image_url: "images/about_1.png",
+        title: "01",
+        heading: t("about.feature-1.span")
+      },
+      {
+        image_position: "right",
+        image_url: "images/about_2.png",
+        title: "02",
+        heading: t("about.feature-2.span")
+      },
+      {
+        image_position: "left",
+        image_url: "images/about_3.png",
+        title: "03",
+        heading: t("about.feature-3.span")
+      },
+      {
+        image_position: "right",
+        image_url: "images/about_4.png",
+        title: "04",
+        heading: t("about.feature-4.span"),
+        subheading: t("about.feature-4.p")
+      },
+      {
+        image_position: "left",
+        image_url: "images/about_5.png",
+        title: "05",
+        heading: t("about.feature-5.span"),
+        subheading: t("about.feature-5.p"),
+        addon: (
+          <>
+            <a href="#" className="feature-addon">
+              #expat
+            </a>
+            &nbsp;
+            <a href="#" className="feature-addon">
+              #digitalnomad
+            </a>
+          </>
+        )
+      }
+    ];
     return (
       <section id="about" className="content-section about">
+        <ScrollUpButton
+        // StopPosition={0}
+        // ShowAtPosition={150}
+        // EasingType="easeOutCubic"
+        // AnimationDuration={500}
+        // ContainerClassName="ScrollUpButton__Container"
+        // TransitionClassName="ScrollUpButton__Toggled"
+        // style={{ width: "50px", right: "calc(50% - 25px)", opacity: "1" }}
+        // ToggledStyle={{ right: 100 }}
+        />
         <div className="container-fluid fullheight">
           <div
             className="scroll about-info"
@@ -36,6 +93,7 @@ class AboutSection extends Component {
               }}
               dir="ltr"
             > */}
+
             <div className="col-xs-12 col-lg-6">
               <div className="about-mobscreen-backpattern">
                 <img src="images/about_static_pattern.png" />
@@ -59,73 +117,7 @@ class AboutSection extends Component {
                 <span>{t("about.section-title.span")}</span>
                 <p>{t("about.section-title.p")}</p>
               </div>
-              <div className="content-block features">
-                <div className="col-xs-12 feature-item feature-item-left">
-                  <div
-                    className="col-xs-12 col-sm-6 feature-image "
-                    style={{
-                      backgroundImage: "url('images/about_1.png')"
-                    }}
-                  />
-                  <div className="col-xs-12 col-sm-6 feature-description">
-                    <h3>01</h3>
-                    <span>{t("about.feature-1.span")}</span>
-                  </div>
-                </div>
-
-                <div className="col-xs-12 feature-item feature-item-right">
-                  <div
-                    className="col-xs-12 col-sm-6 feature-image"
-                    style={{
-                      backgroundImage: "url('images/about_2.png')"
-                    }}
-                  />
-                  <div className="col-xs-12 col-sm-6 feature-description">
-                    <h3>02</h3>
-                    <span>{t("about.feature-2.span")}</span>
-                  </div>
-                </div>
-
-                <div className="col-xs-12 feature-item feature-item-left">
-                  <div
-                    className="col-xs-12 col-sm-6 feature-image"
-                    style={{
-                      backgroundImage: "url('images/about_3.png')"
-                    }}
-                  />
-                  <div className="col-xs-12 col-sm-6 feature-description">
-                    <h3>03</h3>
-                    <span>{t("about.feature-3.span")}</span>
-                  </div>
-                </div>
-
-                <div className="col-xs-12 feature-item feature-item-right">
-                  <div
-                    className="col-xs-12 col-sm-6 feature-image"
-                    style={{
-                      backgroundImage: "url('images/about_4.png')"
-                    }}
-                  />
-                  <div className="col-xs-12 col-sm-6 feature-description">
-                    <h3>04</h3>
-                    <span>{t("about.feature-4.span")}</span>
-                    <p className="text-s">{t("about.feature-4.p")}</p>
-                  </div>
-                </div>
-                <div className="col-xs-12 feature-item feature-item-left">
-                  <div
-                    className="col-xs-12 col-sm-6 feature-image"
-                    style={{
-                      backgroundImage: "url('images/about_5.png')"
-                    }}
-                  />
-                  <div className="col-xs-12 col-sm-6 feature-description">
-                    <h3>05</h3>
-                    <span>{t("about.feature-5.span")}</span>
-                    <p className="text-s">{t("about.feature-5.p")}</p>
-                  </div>
-                </div>
-              </div>
+              <FGallery galleries={galleries} />
 
               <div
                 className="content-block about-bottom-container"

@@ -12,7 +12,7 @@ const dictionary = {
       "By signing up, you agree to Flipptap’s Terms and Privacy Policy.",
 
     "home.sign-up-form.fullname": "Full Name",
-    "home.sign-up-form.email": "Email ID",
+    "home.sign-up-form.email": "Email",
     "home.sign-up-form.button": "TRY FOR FREE",
 
     "home.button.get-started": "GET STARTED",
@@ -56,7 +56,7 @@ const dictionary = {
       "An employer that is close enough to commute or relocate without impacting your family, friends & daily life.",
     "about.feature-5.span": "Ability to Work Abroad",
     "about.feature-5.p":
-      "An employer that is willing to offer open work permits, remote opportunities or work-abroad experience. #expat #digitalnomad",
+      "An employer that is willing to offer open work permits, remote opportunities or work-abroad experience. ",
     "about.bottom-1":
       "Guess What - Rarely is this Information Included in the Job Description!",
     "about.bottom-2": "That’s where Flipptap comes in....",
