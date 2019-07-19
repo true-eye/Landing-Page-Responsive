@@ -7,13 +7,8 @@ import RoundButton from "../../components/RoundButton";
 import FLabel from "../../components/FLabel";
 import FInput from "../../components/FInput";
 import CircleImgButton from "../../components/CircleImgButton";
-
-// import { useTranslation } from "react-i18next";
-
-import { withTranslation } from "react-i18next";
 import "./index.scss";
 const { changeLang } = langActions;
-// const { t, i18n } = useTranslation();
 
 class HomeSection extends Component {
   state = {
@@ -28,12 +23,11 @@ class HomeSection extends Component {
 
   onChangeLang = lang => {
     this.props.changeLang(lang);
-    this.props.i18n.changeLanguage(lang);
   };
 
   render() {
-    const { currentLang, t } = this.props;
-    const { showDropdown } = this.state;
+    const { currentLang } = this.props;
+    const { t } = this.props;
 
     const langOptions = [
       { flag_url: "images/lang_en.png", label: "EN", value: "en" },
@@ -193,4 +187,4 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   )
-)(withTranslation()(HomeSection));
+)(HomeSection);
