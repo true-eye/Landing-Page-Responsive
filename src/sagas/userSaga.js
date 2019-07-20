@@ -16,7 +16,9 @@ function* signUnRequest(action) {
     const data = res.data;
     yield put({ type: USER.SIGNUP_SUCCESS });
   } catch (e) {
+    console.log(e);
     const status = e.response.status;
+
     yield put({ type: USER.SIGNUP_FAILURE, status });
   }
 }
