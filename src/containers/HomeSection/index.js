@@ -10,14 +10,15 @@ import CircleImgButton from "../../components/CircleImgButton";
 import TextField from "@material-ui/core/TextField";
 
 import "./index.scss";
+import FModal from "../../components/FModal";
 const { changeLang } = langActions;
-const { requestSignUp } = userActions;
+const { requestSignUp, toggleOopsModal, toggleThankModal } = userActions;
 
 class HomeSection extends Component {
   state = {
     showDropdown: false,
     user: {
-      name: "",
+      fullname: "",
       email: ""
     }
   };
@@ -59,7 +60,7 @@ class HomeSection extends Component {
       fr: 1
     };
 
-    const { loading } = this.props.auth;
+    const { loading, visibleThankModal, visibleOopsModal } = this.props.auth;
 
     return (
       <section id="main" className="main loaded">
@@ -171,8 +172,8 @@ class HomeSection extends Component {
                       id="home-fullname"
                       label={t("home.sign-up-form.fullname")}
                       margin="normal"
-                      value={this.state.user.name}
-                      onChange={ev => this.handleChange(ev, "name")}
+                      value={this.state.user.fullname}
+                      onChange={ev => this.handleChange(ev, "fullname")}
                       style={{ width: "100%" }}
                     />
                   </div>
@@ -214,6 +215,36 @@ class HomeSection extends Component {
             </div>
           </div>
         </div>
+        {visibleThankModal && (
+          <FModal id="modal-thankyou" onClose={this.props.toggleThankModal}>
+            <div className="modal-thankyou-body">
+              <h2>Thank you</h2>
+              <h4>for signing up to Flipptap!</h4>
+              <p>
+                We are working hard so you can see Flipptap in your city very
+                soon.Our goal is to help as many people as possible to find
+                their dream job without all the constraint. Finding a job where
+                you can feel empowered is the key for a better life.
+                <br />
+                <br />
+                In the meantime, we’re going to send fun stuff like tips on how
+                to work abroad, exclusive employment opportunities and other
+                exciting updates.
+              </p>
+            </div>
+          </FModal>
+        )}
+        {visibleOopsModal && (
+          <FModal id="modal-oops" onClose={this.props.toggleOopsModal}>
+            <div className="modal-oops-body">
+              <h2>Oops</h2>
+              <p>
+                Oops, it looks like this email address is already in our system.
+                Stay tuned for Flipptap updates coming your way.
+              </p>
+            </div>
+          </FModal>
+        )}
       </section>
     );
   }
@@ -226,7 +257,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     changeLang: newLang => dispatch(changeLang(newLang)),
-    requestSignUp: user => dispatch(requestSignUp(user))
+    requestSignUp: user => dispatch(requestSignUp(user)),
+    toggleThankModal: () => dispatch(toggleThankModal()),
+    toggleOopsModal: () => dispatch(toggleOopsModal())
   };
 };
 

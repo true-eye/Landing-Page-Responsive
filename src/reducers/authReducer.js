@@ -3,7 +3,9 @@ const { USER } = types;
 
 const initialState = {
   signedIn: true,
-  loading: false
+  loading: false,
+  visibleThankModal: false,
+  visibleOopsModal: false
 };
 
 function authReducer(state = initialState, action) {
@@ -24,13 +26,28 @@ function authReducer(state = initialState, action) {
     case USER.SIGNUP_SUCCESS: {
       return {
         ...state,
+        visibleThankModal: true,
         loading: false
       };
     }
     case USER.SIGNUP_FAILURE: {
+      console.log("signup failure", action.status);
       return {
         ...state,
+        visibleOopsModal: true,
         loading: false
+      };
+    }
+    case USER.TOGGLE_THANK_MODAL: {
+      return {
+        ...state,
+        visibleThankModal: !state.visibleThankModal
+      };
+    }
+    case USER.TOGGLE_OOPS_MODAL: {
+      return {
+        ...state,
+        visibleOopsModal: !state.visibleOopsModal
       };
     }
     default: {
