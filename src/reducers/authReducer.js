@@ -4,7 +4,7 @@ const { USER } = types;
 const initialState = {
   signedIn: true,
   loading: false,
-  visibleThankModal: true,
+  visibleThankModal: false,
   visibleOopsModal: false
 };
 
