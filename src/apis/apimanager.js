@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // const apiUrl = "http://localhost:4040/api/";
-const apiUrl = "http://127.0.0.1:4040/api/";
+const apiUrl = "http://18.222.170.191/v1/api/";
 
 const handleErrors = err => {
   throw err;
