@@ -34,7 +34,7 @@ function authReducer(state = initialState, action) {
       console.log("signup failure", action.status);
       return {
         ...state,
-        visibleOopsModal: true,
+        visibleOopsModal: action.status === 500,
         loading: false
       };
     }
