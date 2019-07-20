@@ -16,6 +16,7 @@
     padding: 2px 16px;
     background-color: white;
     color: white;
+    background: transparent;
   }
 
   /* Modal Body */
@@ -28,12 +29,14 @@
     padding: 2px 16px;
     background-color: white;
     color: white;
+
+    background: transparent;
   }
 
   /* Modal Content */
   &__content {
     position: relative;
-    background-color: #fefefe;
+    background: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -41,6 +44,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
     animation-duration: 0.4s;
+
+    background-image: url("/images/modal_bg_top.png"),
+      url("/images/modal_bg_bottom.png");
+    background-position: left top, right bottom;
+    // background-size: cover;
+    background-repeat: no-repeat;
   }
 
   /* Add Animation */
@@ -61,6 +70,13 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding-left: 6px;
+    margin-top: 10px;
+    line-height: 32px;
   }
 
   .close:hover,
@@ -68,5 +84,48 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .fmodal {
+    padding-top: 250px;
+    &__content {
+      width: 40%;
+    }
+    &__header {
+      padding: 2px 16px;
+    }
+    &__body {
+      padding: 20px 40px 30px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .fmodal {
+    padding-top: 200px;
+    &__content {
+      width: 60%;
+    }
+    &__header {
+      padding: 2px 16px;
+    }
+    &__body {
+      padding: 20px 40px 30px;
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .fmodal {
+    padding-top: 100px;
+    &__content {
+      width: 90%;
+    }
+    &__header {
+      padding: 2px 16px;
+    }
+    &__body {
+      padding: 0px 20px 10px;
+    }
   }
 }

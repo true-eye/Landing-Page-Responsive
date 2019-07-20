@@ -214,7 +214,7 @@ body {
   min-width: 320px;
   position: relative;
   overflow-x: hidden;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
@@ -547,6 +547,11 @@ h1.light-text {
     font-size: 11rem;
     margin-bottom: 3.2rem;
   }
+  .headline h1 {
+    font-size: 35px;
+    line-height: 52px;
+    margin-bottom: 22px;
+  }
 }
 h2 {
   font-weight: 800;
@@ -598,9 +603,9 @@ p.headline-text {
   /* font-size: 1.6rem; */
   margin-bottom: 3rem;
 
-  opacity: 0.8;
   font-family: "Avenir Next";
   font-size: 25px;
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
   line-height: 34px;
   text-align: justify;
@@ -609,14 +614,14 @@ p.headline-text {
   p.headline-text {
     font-size: 1.8rem;
     margin-bottom: 3.2rem;
-    max-width: 480px;
   }
 }
 @media only screen and (min-width: 1600px) {
   p.headline-text {
-    margin-bottom: 4.2rem;
+    margin-bottom: 37.8px;
+    line-height: 34px;
     max-width: 540px;
-    font-size: 2rem;
+    font-size: 25px;
   }
 }
 .section-title span {
@@ -841,7 +846,7 @@ form textarea {
   padding: 0;
   background-color: transparent;
   padding: 1.2rem 0.3rem;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   -webkit-transition: border-bottom 0.6s;
   -o-transition: border-bottom 0.6s;
@@ -1249,7 +1254,7 @@ form textarea {
 }
 .headline h1 {
   color: #262626;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-size: 35px;
   font-weight: 600;
   line-height: 52px;
@@ -1258,7 +1263,7 @@ form textarea {
   .headline {
     position: absolute;
     left: 0;
-    top: 40%;
+    top: 50%;
     bottom: auto;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -1268,12 +1273,14 @@ form textarea {
 }
 @media only screen and (min-width: 1200px) {
   .headline {
-    padding: 0 120px;
+    padding: 0 60px;
+    top: 47%;
   }
 }
 @media only screen and (min-width: 1600px) {
   .headline {
     padding: 0 140px;
+    top: 50%;
   }
 }
 .main-media {
@@ -1374,14 +1381,14 @@ form textarea {
 }
 @media only screen and (min-width: 1200px) {
   .logo {
-    top: 4rem;
-    left: 6.4rem;
+    top: 55px;
+    left: 40px;
   }
 }
 @media only screen and (min-width: 1600px) {
   .logo {
-    top: 4.8rem;
-    left: 8rem;
+    top: 35px;
+    left: 80px;
   }
 }
 .notify-trigger {
@@ -1418,8 +1425,8 @@ form textarea {
   .menu {
     display: block;
     position: absolute;
-    top: 2.5rem;
-    right: 6.4rem;
+    top: 30px;
+    right: 30.76px;
   }
   .menu ul {
     display: block;
@@ -1428,7 +1435,10 @@ form textarea {
   .menu ul li {
     display: inline-block;
     position: relative;
-    margin-right: 32px;
+    margin-right: 20px;
+  }
+  .menu ul li a {
+    padding: 29px 0;
   }
   .menu ul li:last-of-type {
     margin-right: 0;
@@ -1457,7 +1467,7 @@ form textarea {
     display: block;
     position: relative;
     text-decoration: none;
-    padding: 2.4rem 0;
+    padding: 29px 0;
     color: black;
     font-family: "Avenir Next";
     font-size: 16px;
@@ -1467,9 +1477,12 @@ form textarea {
 }
 @media only screen and (min-width: 1600px) {
   .menu {
-    position: absolute;
-    top: 3rem;
-    right: 8rem;
+    top: 10px;
+    right: 60.76px;
+  }
+  .menu ul li {
+  }
+  .menu ul li a {
   }
 }
 .socials {
@@ -1511,7 +1524,7 @@ form textarea {
     position: absolute;
     right: auto;
     bottom: 50px;
-    left: 10%;
+    left: 60px;
   }
   .socials ul {
     display: block;
@@ -1528,8 +1541,8 @@ form textarea {
   .socials {
     position: absolute;
     right: auto;
-    bottom: 4.8rem;
-    left: 8rem;
+    bottom: 50px;
+    left: 135px;
   }
 }
 .countdown {
@@ -1551,7 +1564,7 @@ form textarea {
 }
 .countdown #countdown {
   position: relative;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 6rem;
   font-weight: 700;
   line-height: 0.8;
@@ -5834,7 +5847,7 @@ _:future,
   color: rgba(255, 255, 255, 0.6);
 }
 .pswp__counter {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .pswp__button--close {
   opacity: 1;

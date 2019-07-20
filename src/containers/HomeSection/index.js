@@ -8,6 +8,7 @@ import FLabel from "../../components/FLabel";
 import FInput from "../../components/FInput";
 import CircleImgButton from "../../components/CircleImgButton";
 import TextField from "@material-ui/core/TextField";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 import "./index.scss";
 import FModal from "../../components/FModal";
@@ -166,34 +167,48 @@ class HomeSection extends Component {
                 <p className="headline-text">
                   {t("home.headline.headline-text")}
                 </p>
-                <div className="sign-up-form">
+                <ValidatorForm
+                  ref="form"
+                  onSubmit={this.onSignup}
+                  onError={errors => console.log(errors)}
+                  className="sign-up-form"
+                >
                   <div className="sign-up-form__inline-grow">
-                    <TextField
+                    <TextValidator
                       id="home-fullname"
                       label={t("home.sign-up-form.fullname")}
                       margin="normal"
+                      name="fullname"
                       value={this.state.user.fullname}
                       onChange={ev => this.handleChange(ev, "fullname")}
                       style={{ width: "100%" }}
+                      validators={["required"]}
+                      errorMessages={["this field is required"]}
                     />
                   </div>
                   <div className="sign-up-form__inline-grow">
-                    <TextField
+                    <TextValidator
                       id="home-email"
                       label={t("home.sign-up-form.email")}
                       margin="normal"
+                      name="email"
                       value={this.state.user.email}
                       onChange={ev => this.handleChange(ev, "email")}
                       style={{ width: "100%" }}
+                      validators={["required", "isEmail"]}
+                      errorMessages={[
+                        "this field is required",
+                        "email is not valid"
+                      ]}
                     />
                   </div>
                   <RoundButton
                     label={t("home.sign-up-form.button")}
-                    onClick={this.onSignup}
+                    type="submit"
                     disabled={loading}
                     loading={loading}
                   />
-                </div>
+                </ValidatorForm>
                 <p className="headline-bottom-text">
                   {t("home.headline.headline-bottom-text")}
                 </p>
@@ -218,7 +233,7 @@ class HomeSection extends Component {
         {visibleThankModal && (
           <FModal id="modal-thankyou" onClose={this.props.toggleThankModal}>
             <div className="modal-thankyou-body">
-              <h2>Thank you</h2>
+              <img src="/images/modal_thankyou.png" />
               <h4>for signing up to Flipptap!</h4>
               <p>
                 We are working hard so you can see Flipptap in your city very

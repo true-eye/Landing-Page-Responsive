@@ -5,16 +5,60 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* @font-face {
+  font-family: "Basis";
+  src: url("../assets/font/basis-grotesque-monobold-pro.eot");
+  src: url("../assets/font/basis-grotesque-monobold-pro.otf")
+      format("embedded-opentype"),
+    url("../assets/font/basis-grotesque-monobold-pro.woff") format("woff"),
+    url("../assets/font/basis-grotesque-monobold-pro.woff2") format("woff2"),
+    url("../assets/font/basis-grotesque-monobold-pro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: bold;
+}
 @font-face {
-  font-family: "Avenir Next";
-  src: url("/fonts/AvenirNext/AvenirNextLTPro-It.otf") format("otf");
+  font-family: "Basis-Regular";
+  src: url("../assets/font/basis-grotesque-regular-pro.eot");
+  src: url("../assets/font/basis-grotesque-regular-pro.woff") format("woff"),
+    url("../assets/font/basis-grotesque-regular-pro.woff2") format("woff2"),
+    url("../assets/font/basis-grotesque-regular-pro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: "Androgyne";
+  src: url("/fonts/Androgyne/Androgyne_TB.otf") format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: Poppins;
-  src: url("/fonts/poppins-cufonfonts/Poppins-Regular.ttf") format("ttf");
+  font-family: "Avenir Next";
+  src: url("/fonts/Avenir Next/AvenirNext-Regular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/Avenir Next/AvenirNext-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Avenir Next/AvenirNext-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-cufonfonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-cufonfonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
 }
 code {

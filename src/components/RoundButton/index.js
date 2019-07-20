@@ -16,7 +16,8 @@ class RoundButton extends Component {
       label,
       onClick,
       disabled,
-      loading
+      loading,
+      type
     } = this.props;
     return (
       <button
@@ -25,6 +26,7 @@ class RoundButton extends Component {
         style={{ width: width }}
         onClick={onClick}
         disabled={disabled}
+        type={type}
       >
         {label}
 

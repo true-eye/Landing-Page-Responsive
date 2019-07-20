@@ -37,14 +37,12 @@
       width: 0;
     }
   }
-  button {
-    min-width: 150px;
-  }
   .MuiInput-underline:before {
     display: none;
   }
 }
-.sign-up-form__inline-grow:first-child {
+
+.sign-up-form__inline-grow {
   padding-right: 12px;
 }
 .sign-up-form__inline-grow:first-child::after {
@@ -226,9 +224,10 @@
 }
 .modal-thankyou-body {
   text-align: center;
-  h2 {
-    margin-bottom: 12px;
-    color: #231f20;
+  img {
+    width: 100%;
+    max-width: 288px;
+    margin: auto;
   }
   h4 {
     margin-bottom: 62px;
@@ -239,10 +238,47 @@
   }
   p {
     font-weight: 500;
+    font-size: 17px;
     line-height: 23px;
     text-align: justify;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .main-intro {
+    .intro-content {
+      .social-line {
+        width: 144px;
+      }
+      .headline {
+        .sign-up-form {
+          padding: 5.8px 5.8px 5.8px 31px;
+        }
+
+        .headline-bottom-text {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .main-intro {
+    .intro-content {
+      .social-line {
+        width: 204px;
+      }
+      .headline {
+        .sign-up-form {
+          padding: 7.2px 7.6px 7.2px 31px;
+          .MuiFormControl-root {
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 384px) {
   .main-intro {
     .intro-mobile-gradient {
@@ -421,5 +457,22 @@
   }
   .main-media {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .modal-thankyou-body {
+    text-align: center;
+    img {
+      margin-bottom: 6px;
+    }
+    h4 {
+      margin-bottom: 31px;
+      font-size: 16px;
+      line-height: 15px;
+    }
+    p {
+      font-size: 1.4rem;
+    }
   }
 }
