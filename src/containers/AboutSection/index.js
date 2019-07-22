@@ -125,7 +125,7 @@ class AboutSection extends Component {
             shadow={true}
           />
         </ScrollUpButton>
-        {btn_show && (
+        {/* {btn_show && (
           <div className="coomponent-scroll-up-btn">
             <CircleImgButton
               src="images/btn_back.png"
@@ -135,7 +135,7 @@ class AboutSection extends Component {
               shadow={true}
             />
           </div>
-        )}
+        )} */}
         <div className="container-fluid fullheight">
           <div
             className="scroll about-info"

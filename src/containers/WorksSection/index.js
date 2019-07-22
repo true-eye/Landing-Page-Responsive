@@ -58,22 +58,12 @@ class WorksSection extends Component {
           <div
             className="scroll works-info _mCS_2"
             style={{
-              width: "100%"
+              width: "100%",
+              backgroundImage:
+                "linear-gradient(223.67deg, #FFC107 0%, #F44336 50.7%, #9C27B0 100%)"
             }}
           >
-            {/* <div
-              id="mCSB_2_container"
-              className="mCSB_container"
-              style={{
-                position: "relative",
-                top: "0px",
-                left: "0px",
-                backgroundImage:
-                  "linear-gradient(223.67deg, #FFC107 0%, #F44336 50.7%, #9C27B0 100%)"
-              }}
-              dir="ltr"
-            > */}
-            <div className="col-xs-12 col-lg-6">
+            <div className="left-pattern">
               <div className="works-mobscreen-backpattern">
                 <img src="images/works_static_pattern.png" />
               </div>
@@ -81,6 +71,7 @@ class WorksSection extends Component {
                 <img src="images/works_static_bg.png" />
               </div>
             </div>
+            <div className="col-xs-12 col-lg-6" />
             <div
               className="col-xs-12 col-lg-6 blocks-container"
               style={{ paddingBottom: "0px" }}
@@ -131,8 +122,6 @@ class WorksSection extends Component {
               </div>
             </div>
           </div>
-          {/*             
-          </div> */}
         </div>
       </section>
     );

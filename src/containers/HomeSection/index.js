@@ -117,29 +117,17 @@ class HomeSection extends Component {
                 <nav>
                   <ul>
                     <li>
-                      <a
-                        href="#"
-                        id="about-trigger"
-                        // onClick={this.onAbout}
-                      >
+                      <a href="#" id="about-trigger" onClick={this.onAbout}>
                         {t("navbar.about-us")}
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        id="works-trigger"
-                        // onClick={this.onWorks}
-                      >
+                      <a href="#" id="works-trigger" onClick={this.onWorks}>
                         {t("navbar.how-it-works")}
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
-                        id="contact-trigger"
-                        //  onClick={this.onContact}
-                      >
+                      <a href="#" id="contact-trigger" onClick={this.onContact}>
                         {t("navbar.contact-us")}
                       </a>
                     </li>
