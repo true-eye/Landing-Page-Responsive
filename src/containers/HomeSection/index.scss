@@ -393,7 +393,12 @@
       margin-top: 9px;
       font-family: "Lato";
     }
-
+    .MuiInput-underline:after {
+      border-bottom-color: #eee;
+    }
+    .MuiInput-underline.Mui-focused:after {
+      border-bottom-color: #ccc;
+    }
     .MuiInput-underline:before {
       display: inherit;
     }

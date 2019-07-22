@@ -1,8 +1,7 @@
 .fmodal {
   display: block;
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 186px; /* Location of the box */
+  z-index: 11; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -36,6 +35,8 @@
   /* Modal Content */
   &__content {
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     background: #fefefe;
     margin: auto;
     padding: 0;
@@ -89,7 +90,6 @@
 
 @media only screen and (max-width: 1024px) {
   .fmodal {
-    padding-top: 250px;
     &__content {
       width: 40%;
     }
@@ -103,7 +103,6 @@
 }
 @media only screen and (max-width: 768px) {
   .fmodal {
-    padding-top: 200px;
     &__content {
       width: 60%;
     }
@@ -117,7 +116,6 @@
 }
 @media only screen and (max-width: 425px) {
   .fmodal {
-    padding-top: 100px;
     &__content {
       width: 90%;
     }

@@ -6,14 +6,13 @@ import RoundButton from "../../components/RoundButton";
 import CircleImgButton from "../../components/CircleImgButton";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import FModal from "../../components/FModal";
 
 import * as constants from "../../utils/constants";
 
 import "./index.scss";
 
 const { changeLang } = langActions;
-const { requestSignUp, toggleOopsModal, toggleThankModal } = userActions;
+const { requestSignUp } = userActions;
 
 class HomeSection extends Component {
   state = {
@@ -295,36 +294,6 @@ class HomeSection extends Component {
             </div>
           </div>
         </div>
-        {visibleThankModal && (
-          <FModal id="modal-thankyou" onClose={this.props.toggleThankModal}>
-            <div className="modal-thankyou-body">
-              <img src="/images/modal_thankyou.png" />
-              <h4>for signing up to Flipptap!</h4>
-              <p>
-                We are working hard so you can see Flipptap in your city very
-                soon.Our goal is to help as many people as possible to find
-                their dream job without all the constraint. Finding a job where
-                you can feel empowered is the key for a better life.
-                <br />
-                <br />
-                In the meantime, we’re going to send fun stuff like tips on how
-                to work abroad, exclusive employment opportunities and other
-                exciting updates.
-              </p>
-            </div>
-          </FModal>
-        )}
-        {visibleOopsModal && (
-          <FModal id="modal-oops" onClose={this.props.toggleOopsModal}>
-            <div className="modal-oops-body">
-              <h2>Oops</h2>
-              <p>
-                Oops, it looks like this email address is already in our system.
-                Stay tuned for Flipptap updates coming your way.
-              </p>
-            </div>
-          </FModal>
-        )}
       </section>
     );
   }
@@ -337,10 +306,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     changeLang: newLang => dispatch(changeLang(newLang)),
-    requestSignUp: (user, subscribe) =>
-      dispatch(requestSignUp(user, subscribe)),
-    toggleThankModal: () => dispatch(toggleThankModal()),
-    toggleOopsModal: () => dispatch(toggleOopsModal())
+    requestSignUp: (user, subscribe) => dispatch(requestSignUp(user, subscribe))
   };
 };
 
