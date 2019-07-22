@@ -9,7 +9,23 @@ import "./index.scss";
 const { requestSignIn } = userActions;
 
 class ContactSection extends Component {
-  componentDidMount() {}
+  constructor(props) {
+    super(props);
+    this.onBack = this.onBack.bind(this);
+  }
+
+  onBack = () => {
+    let page_main = document.getElementById("main");
+    let page_contact = document.getElementById("contact");
+
+    page_main.classList.remove("is-hidden");
+    page_contact.classList.add("is-hidden");
+
+    setTimeout(() => {
+      page_contact.classList.remove("is-visible");
+      page_contact.classList.remove("is-hidden");
+    }, 600);
+  };
 
   render() {
     const { t } = this.props;
@@ -29,12 +45,17 @@ class ContactSection extends Component {
                 dir="ltr"
               >
                 <div className="blocks-container">
-                  <div className="section-controls">
+                  <div
+                    className="section-controls"
+                    style={{ overflow: "initial" }}
+                  >
                     <CircleImgButton
                       src="images/btn_back.png"
                       id="contact-close"
                       className="section-close"
                       width="80px"
+                      shadow={true}
+                      onClick={this.onBack}
                     />
                   </div>
 

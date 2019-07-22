@@ -8,13 +8,18 @@ class CircleImgButton extends Component {
   componentDidMount() {}
 
   render() {
-    const { src, width, className, id } = this.props;
+    const { src, width, className, id, shadow, onClick } = this.props;
     return (
       <img
-        className={"circle-img-button " + className}
+        className={
+          "circle-img-button " +
+          className +
+          (shadow === true ? " button-shadow" : "")
+        }
         src={src}
         id={id}
         style={{ width: width }}
+        onClick={onClick}
       />
     );
   }

@@ -8,6 +8,7 @@ import WorksSection from "../WorksSection";
 import AboutSection from "../AboutSection";
 
 import { translate } from "../../utils/translation";
+import "./index.scss";
 const { requestSignIn } = userActions;
 
 class MainPage extends Component {
@@ -25,9 +26,16 @@ class MainPage extends Component {
     return (
       <>
         <HomeSection t={this.t} currentLang={this.props.currentLang} />
-        <AboutSection t={this.t} currentLang={this.props.currentLang} />
+        {/* <AboutSection t={this.t} currentLang={this.props.currentLang} />
         <WorksSection t={this.t} currentLang={this.props.currentLang} />
-        <ContactSection t={this.t} currentLang={this.props.currentLang} />
+        <ContactSection t={this.t} currentLang={this.props.currentLang} /> */}
+
+        <div className="footer">
+          <p className="footer__text">
+            Made in Toronto with. All member work copyright of respective owner,
+            otherwise © 2019 Flipptop
+          </p>
+        </div>
       </>
     );
   }

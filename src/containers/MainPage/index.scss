@@ -1,0 +1,17 @@
+.footer {
+  display: none;
+  background-color: rgb(0.13, 0.13, 0.13);
+  padding: 26px 10% 17px 10%;
+  &__text {
+    font-family: "Avenir Next";
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #606060;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 425px) {
+    display: block;
+  }
+}

@@ -213,7 +213,8 @@ html {
 body {
   min-width: 320px;
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  overflow: auto;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -223,7 +224,7 @@ body {
 }
 @media only screen and (min-width: 1200px) {
   body {
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }
 a {
@@ -626,7 +627,6 @@ p.headline-text {
 }
 .section-title span {
   display: block;
-  margin: 20px 0;
 
   opacity: 0.5;
   color: #000000;
@@ -635,6 +635,10 @@ p.headline-text {
   font-weight: 500;
   line-height: 44px;
   text-align: justify;
+
+  font-size: 18px;
+  line-height: 25px;
+  margin: 12px 0 34.72px 0;
 }
 .section-title span em {
   font-family: LibreBaskerville, serif;
@@ -642,26 +646,64 @@ p.headline-text {
 }
 .section-title p {
   margin: 0;
-  margin-top: 40px;
+  margin-top: 29.28px;
 
   color: #000000;
   font-family: "Avenir Next";
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 34px;
+  line-height: 25px;
   text-align: justify;
 }
+.section-title .mobile_bg {
+  margin: 0 -26px;
+}
+.section-title h2 {
+  color: #262626;
+  font-family: "Avenir Next";
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: bold;
+}
 @media only screen and (min-width: 768px) {
-  .section-title p {
-    margin-top: 1.4rem;
+  .mobile_bg {
+    display: none;
   }
   .section-title span {
-    font-size: 2.2rem;
+    font-size: 32px;
+    line-height: 44px;
+    margin: 20px 0;
+    margin-right: 20px;
+  }
+  .section-title p {
+    font-size: 25px;
+    line-height: 34px;
+    margin-right: 20px;
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+  .section-title h2 {
+    font-size: 46px;
+    line-height: 63px;
   }
 }
 @media only screen and (min-width: 1600px) {
   .section-title span {
-    font-size: 2.8rem;
+    font-size: 32px;
+    line-height: 44px;
+    margin: 20px 0;
+    margin-right: 20px;
+  }
+  .section-title p {
+    font-size: 25px;
+    line-height: 34px;
+    margin-right: 20px;
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+  .section-title h2 {
+    font-size: 46px;
+    line-height: 63px;
   }
 }
 .text-s {
@@ -5017,7 +5059,7 @@ _:future,
 }
 .blocks-container {
   position: relative;
-  padding: 6.4rem 0 6.4rem 0;
+  padding: 50px 0 30px 0;
   background-color: #fff;
 }
 .blocks-container::after {
@@ -5032,11 +5074,11 @@ _:future,
 }
 @media only screen and (min-width: 1200px) {
   .blocks-container {
-    padding: 6.4rem 0 8rem 0;
+    padding: 40px 0 8rem 0;
   }
 }
 .about .blocks-container {
-  padding: 6.4rem 0 0 0;
+  padding: 20px 0 0 0;
 }
 @media only screen and (min-width: 768px) {
   .about .blocks-container {
@@ -5045,7 +5087,7 @@ _:future,
 }
 @media only screen and (min-width: 1200px) {
   .about .blocks-container {
-    padding: 6.4rem 0 0 0;
+    padding: 40px 0 0 0;
   }
 }
 .content-block {
@@ -5095,13 +5137,14 @@ _:future,
   .section-controls {
     display: block;
     overflow: hidden;
-    margin-bottom: 4.8rem;
+    margin-bottom: 58px;
     padding: 0 6.4rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   .section-controls {
-    padding: 0 8rem;
+    padding: 0 105px;
+    margin-bottom: 58px;
   }
 }
 .mCSB_scrollTools {
@@ -5252,8 +5295,8 @@ _:future,
 .section-title {
   position: relative;
   width: 100%;
-  padding: 0 10%;
-  margin: 0 0 100px 0;
+  padding: 0 26px;
+  margin: 0 0 40px 0;
 }
 .section-title::after {
   clear: both;
@@ -5269,7 +5312,7 @@ _:future,
 }
 @media only screen and (min-width: 1600px) {
   .section-title {
-    padding: 0 8rem;
+    padding: 0 85px 0 105px;
     margin: 0 0 100px 0;
   }
 }
@@ -5288,35 +5331,50 @@ _:future,
   text-align: center;
 }
 .feature-item .feature-description {
-  padding: 6.4rem 10%;
+  padding: 23px 74px;
 }
 .feature-item .feature-description h3 {
   opacity: 0.1;
   color: #262626;
   font-family: "Avenir Next";
-  font-size: 46px;
+  font-size: 36px;
   font-weight: bold;
-  line-height: 63px;
+  line-height: 39px;
   margin-bottom: 0px;
 }
 .feature-item .feature-description span {
   color: #000000;
   font-family: "Avenir Next";
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
-  line-height: 34px;
+  line-height: 20px;
   text-align: center;
 }
 .feature-item .feature-description p {
   color: #000000;
   font-family: "Avenir Next";
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 25px;
+  line-height: 16px;
   text-align: center;
   margin-top: 10px;
 }
 @media only screen and (min-width: 768px) {
+  .feature-item .feature-description {
+    padding: 6.4rem 10%;
+  }
+  .feature-item .feature-description h3 {
+    font-size: 46px;
+    line-height: 63px;
+  }
+  .feature-item .feature-description span {
+    font-size: 25px;
+    line-height: 34px;
+  }
+  .feature-item .feature-description p {
+    font-size: 18px;
+    line-height: 25px;
+  }
   .feature-item-left {
     padding: 0;
   }
@@ -5355,7 +5413,7 @@ _:future,
   }
 }
 .feature-image {
-  height: 300px;
+  height: 200px;
   position: relative;
   background-repeat: no-repeat;
   background-position: center center;
@@ -5363,9 +5421,15 @@ _:future,
   -moz-background-size: cover;
   background-size: cover;
 }
+@media only screen and (min-width: 425px) {
+  .feature-image {
+    height: 350px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .feature-image {
-    height: 380px;
+    padding-bottom: 50%;
+    height: 0;
   }
 }
 .blockquote {

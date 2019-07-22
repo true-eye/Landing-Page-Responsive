@@ -1,10 +1,32 @@
-.section-title {
-  h2 {
-    color: #262626;
-    font-family: "Avenir Next";
-    font-size: 46px;
-    font-weight: bold;
-    line-height: 63px;
+.about-sign-up-form-container {
+  background-color: rgba(255, 255, 255, 0.21);
+  border: 5.2px solid rgba(255, 255, 255, 0.21);
+  border-radius: 35px;
+  box-shadow: 0 16px 34px 2px rgba(0, 0, 0, 0.08);
+  margin-bottom: 0px;
+  .sign-up-form {
+    border: none;
+    border-radius: 35px !important;
+    button {
+      font-size: 16.8px;
+      line-height: 23px;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+    display: flex;
+    .sign-up-form {
+      display: flex;
+      padding: 5px 5px 5px 20px;
+      button {
+        font-size: 12px;
+        line-height: 14px;
+        padding: 4px;
+        margin-top: 0px;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 30px;
   }
 }
 
@@ -24,8 +46,8 @@
 
 .about-bottom-container {
   position: relative;
-  min-height: 600px;
-  padding: 40% 150px 0px 150px;
+  min-height: 300px;
+  padding: 40% 25.2px 20px 25.2px;
   background-repeat: no-repeat;
   background-position: bottom center;
   -webkit-background-size: cover;
@@ -35,26 +57,43 @@
   &__title {
     border-radius: 16px;
     background-color: white;
-    padding: 0px;
+    padding: 1px;
 
     background-size: cover;
     overflow: hidden;
 
     color: #ffffff;
     font-family: "Avenir Next";
-    font-size: 35px;
     font-weight: 600;
-    line-height: 48px;
+    font-size: 15.75px;
+    line-height: 22px;
 
     background-color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 12.5px;
+    margin-right: 38px;
+
+    max-width: fit-content;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 40% 150px 0px 150px;
+    &__title {
+      font-size: 35px;
+      line-height: 48px;
+      padding: 12px;
+      margin-right: 0px;
+      margin-bottom: 30.57px;
+    }
   }
 
   @media only screen and (min-width: 1200px) {
     &__title {
-      font-size: 24px;
     }
   }
   @media only screen and (min-width: 1600px) {
+    &__title {
+      font-size: 35px;
+    }
   }
 }
 
@@ -75,4 +114,30 @@
       font-size: 30px;
     }
   }
+}
+.ScrollUpButton__Container {
+  position: fixed;
+  right: -100px;
+  bottom: 50px;
+  transition: right 0.5s;
+  cursor: pointer;
+  z-index: 2;
+  overflow: inherit;
+  background: white;
+
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  .circle-img-button {
+    border-radius: 0px;
+  }
+  .circle-img-button.button-shadow {
+    box-shadow: 0px 0px 11px 2px #2065ff;
+  }
+}
+.ScrollUpButton__Toggled {
+  right: 20px;
 }

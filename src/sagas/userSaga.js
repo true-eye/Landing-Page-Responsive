@@ -15,6 +15,10 @@ function* signUnRequest(action) {
     const res = yield call(ApiManager.SignUp, headers, action.user);
     const data = res.data;
     yield put({ type: USER.SIGNUP_SUCCESS });
+    // action.subscribe({
+    //   EMAIL: action.user.email,
+    //   NAME: action.user.fullname
+    // });
   } catch (e) {
     console.log(e);
     const status = e.response.status;

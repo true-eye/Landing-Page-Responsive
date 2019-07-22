@@ -5,18 +5,58 @@ import { userActions } from "../../actions";
 
 import CircleImgButton from "../../components/CircleImgButton";
 import RoundButton from "../../components/RoundButton";
-import FInput from "../../components/FInput";
-import FLabel from "../../components/FLabel";
 import FGallery from "../../components/FGallery";
 import ScrollUpButton from "react-scroll-up-button";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import "./index.scss";
 const { requestSignIn } = userActions;
 
 class AboutSection extends Component {
+  state = {
+    btn_show: false
+  };
+  constructor(props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onScroll = this.onScroll.bind(this);
+    this.onBack = this.onBack.bind(this);
+  }
+
+  onBack = () => {
+    let page_main = document.getElementById("main");
+    let page_about = document.getElementById("about");
+
+    page_main.classList.remove("is-hidden");
+    page_about.classList.add("is-hidden");
+
+    setTimeout(() => {
+      page_about.classList.remove("is-visible");
+      page_about.classList.remove("is-hidden");
+    }, 600);
+  };
+
+  onSubmit = () => {};
+
   componentDidMount() {}
+
+  onScroll = event => {
+    const position = event.target.scrollTop;
+    const SHOW_POSITION = 300;
+    const { btn_show } = this.state;
+    if (position > SHOW_POSITION) {
+      if (!btn_show) {
+        this.setState({ btn_show: true });
+      }
+    } else {
+      if (btn_show) {
+        this.setState({ btn_show: false });
+      }
+    }
+  };
 
   render() {
     const { t } = this.props;
+    const { btn_show } = this.state;
     const galleries = [
       {
         image_position: "left",
@@ -63,17 +103,39 @@ class AboutSection extends Component {
       }
     ];
     return (
-      <section id="about" className="content-section about">
+      <section
+        id="about"
+        className="content-section about"
+        onScroll={this.onScroll}
+      >
         <ScrollUpButton
-        // StopPosition={0}
-        // ShowAtPosition={150}
-        // EasingType="easeOutCubic"
-        // AnimationDuration={500}
-        // ContainerClassName="ScrollUpButton__Container"
-        // TransitionClassName="ScrollUpButton__Toggled"
-        // style={{ width: "50px", right: "calc(50% - 25px)", opacity: "1" }}
-        // ToggledStyle={{ right: 100 }}
-        />
+          ShowAtPosition={400}
+          EasingType="easeOutCubic"
+          AnimationDuration={500}
+          ContainerClassName="ScrollUpButton__Container"
+          TransitionClassName="ScrollUpButton__Toggled"
+          // style={{ width: "50px", right: "calc(50% - 25px)", opacity: "1" }}
+          // ToggledStyle={{ right: 100 }}
+        >
+          <CircleImgButton
+            src="images/btn_back.png"
+            id="about-scroll-up"
+            // className="section-close"
+            width="40px"
+            shadow={true}
+          />
+        </ScrollUpButton>
+        {btn_show && (
+          <div className="coomponent-scroll-up-btn">
+            <CircleImgButton
+              src="images/btn_back.png"
+              id="about-scroll-up"
+              // className="section-close"
+              width="40px"
+              shadow={true}
+            />
+          </div>
+        )}
         <div className="container-fluid fullheight">
           <div
             className="scroll about-info"
@@ -103,42 +165,70 @@ class AboutSection extends Component {
               </div>
             </div>
             <div className="col-xs-12 col-lg-6 blocks-container">
-              <div className="section-controls">
+              <div className="section-controls" style={{ overflow: "initial" }}>
                 <CircleImgButton
                   src="images/btn_back.png"
                   id="about-close"
                   className="section-close"
                   width="80px"
+                  shadow={true}
+                  onClick={this.onBack}
                 />
               </div>
 
               <div className="content-block section-title">
                 <h2>{t("about.section-title.h2")}</h2>
                 <span>{t("about.section-title.span")}</span>
+                <div className="mobile_bg">
+                  <img src="images/about_mobile_bg.png" />
+                </div>
                 <p>{t("about.section-title.p")}</p>
               </div>
               <FGallery galleries={galleries} />
 
+              <div className="mobile_bg">
+                <img src="images/about_mobile_bg_2.png" />
+              </div>
               <div
                 className="content-block about-bottom-container"
                 style={{
                   backgroundImage: "url('images/about_bottom.png')"
                 }}
               >
-                <div className="col-xs-12 about-bottom-container__title">
+                <div className="about-bottom-container__title">
                   {t("about.bottom-1")}
-                  <br />
-                  <br />
+                </div>
+                <div className="about-bottom-container__title">
                   {t("about.bottom-2")}
                 </div>
-                <div className="col-md-10" style={{ marginTop: "30px" }}>
-                  <div className="sign-up-form">
+                <div
+                  className="col-lg-7 col-md-10 col-sm-12 about-sign-up-form-container"
+                  style={{ marginTop: "30px" }}
+                >
+                  <ValidatorForm
+                    ref="about-form"
+                    onSubmit={this.onSubmit}
+                    // onError={errors => console.log(errors)}
+                    className="sign-up-form"
+                  >
                     <div className="sign-up-form__inline-grow">
-                      <FLabel label={t("about.form.email")} />
-                      <FInput />
+                      <TextValidator
+                        id="about-email"
+                        label={t("about.form.email")}
+                        margin="normal"
+                        name="email"
+                        // value={this.state.user.fullname}
+                        // onChange={ev => this.handleChange(ev, "email")}
+                        style={{ width: "100%" }}
+                        validators={["required", "isEmail"]}
+                        errorMessages={[
+                          "this field is required",
+                          "email is not valid"
+                        ]}
+                      />
                     </div>
                     <RoundButton label={t("about.form.get-early-access")} />
-                  </div>
+                  </ValidatorForm>
                 </div>
               </div>
             </div>

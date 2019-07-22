@@ -3,15 +3,15 @@ import { compose } from "recompose";
 import { connect } from "react-redux";
 import { langActions, userActions } from "../../actions";
 import RoundButton from "../../components/RoundButton";
-
-import FLabel from "../../components/FLabel";
-import FInput from "../../components/FInput";
 import CircleImgButton from "../../components/CircleImgButton";
-import TextField from "@material-ui/core/TextField";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import FModal from "../../components/FModal";
+
+import * as constants from "../../utils/constants";
 
 import "./index.scss";
-import FModal from "../../components/FModal";
+
 const { changeLang } = langActions;
 const { requestSignUp, toggleOopsModal, toggleThankModal } = userActions;
 
@@ -28,6 +28,10 @@ class HomeSection extends Component {
     this.onChangeLang = this.onChangeLang.bind(this);
     this.onSignup = this.onSignup.bind(this);
     this.handleChange = this.handleChange.bind(this);
+
+    this.onAbout = this.onAbout.bind(this);
+    this.onWorks = this.onWorks.bind(this);
+    this.onContact = this.onContact.bind(this);
   }
 
   componentDidMount() {}
@@ -36,15 +40,39 @@ class HomeSection extends Component {
     this.props.changeLang(lang);
   };
 
-  onSignup = () => {
-    console.log(this.state.user);
-    this.props.requestSignUp(this.state.user);
+  onSignup = subscribe => {
+    const { user } = this.state;
+    this.props.requestSignUp(user, subscribe);
   };
 
   handleChange = (ev, key) => {
     let user = { ...this.state.user };
     user[key] = ev.target.value;
     this.setState({ user });
+  };
+
+  onAbout = () => {
+    let page_main = document.getElementById("main");
+    let page_about = document.getElementById("about");
+
+    page_main.classList.add("is-hidden");
+    page_about.classList.add("is-visible");
+  };
+
+  onWorks = () => {
+    let page_main = document.getElementById("main");
+    let page_works = document.getElementById("works");
+
+    page_main.classList.add("is-hidden");
+    page_works.classList.add("is-visible");
+  };
+
+  onContact = () => {
+    let page_main = document.getElementById("main");
+    let page_contact = document.getElementById("contact");
+
+    page_main.classList.add("is-hidden");
+    page_contact.classList.add("is-visible");
   };
 
   render() {
@@ -90,17 +118,29 @@ class HomeSection extends Component {
                 <nav>
                   <ul>
                     <li>
-                      <a href="#" id="about-trigger">
+                      <a
+                        href="#"
+                        id="about-trigger"
+                        // onClick={this.onAbout}
+                      >
                         {t("navbar.about-us")}
                       </a>
                     </li>
                     <li>
-                      <a href="#" id="works-trigger">
+                      <a
+                        href="#"
+                        id="works-trigger"
+                        // onClick={this.onWorks}
+                      >
                         {t("navbar.how-it-works")}
                       </a>
                     </li>
                     <li>
-                      <a href="#" id="contact-trigger">
+                      <a
+                        href="#"
+                        id="contact-trigger"
+                        //  onClick={this.onContact}
+                      >
                         {t("navbar.contact-us")}
                       </a>
                     </li>
@@ -167,48 +207,73 @@ class HomeSection extends Component {
                 <p className="headline-text">
                   {t("home.headline.headline-text")}
                 </p>
-                <ValidatorForm
-                  ref="form"
-                  onSubmit={this.onSignup}
-                  onError={errors => console.log(errors)}
-                  className="sign-up-form"
-                >
-                  <div className="sign-up-form__inline-grow">
-                    <TextValidator
-                      id="home-fullname"
-                      label={t("home.sign-up-form.fullname")}
-                      margin="normal"
-                      name="fullname"
-                      value={this.state.user.fullname}
-                      onChange={ev => this.handleChange(ev, "fullname")}
-                      style={{ width: "100%" }}
-                      validators={["required"]}
-                      errorMessages={["this field is required"]}
-                    />
-                  </div>
-                  <div className="sign-up-form__inline-grow">
-                    <TextValidator
-                      id="home-email"
-                      label={t("home.sign-up-form.email")}
-                      margin="normal"
-                      name="email"
-                      value={this.state.user.email}
-                      onChange={ev => this.handleChange(ev, "email")}
-                      style={{ width: "100%" }}
-                      validators={["required", "isEmail"]}
-                      errorMessages={[
-                        "this field is required",
-                        "email is not valid"
-                      ]}
-                    />
-                  </div>
-                  <RoundButton
-                    label={t("home.sign-up-form.button")}
-                    type="submit"
-                    disabled={loading}
-                    loading={loading}
-                  />
-                </ValidatorForm>
+                <MailchimpSubscribe
+                  url={constants.mailchimp_url}
+                  render={({ subscribe, status, message }) => (
+                    <div>
+                      {/* <MyForm  /> */}
+
+                      <ValidatorForm
+                        ref="form"
+                        onSubmit={() => {
+                          this.onSignup(subscribe);
+                        }}
+                        onError={errors => console.log(errors)}
+                        className="sign-up-form"
+                      >
+                        <div className="sign-up-form__inline-grow">
+                          <TextValidator
+                            id="home-fullname"
+                            label={t("home.sign-up-form.fullname")}
+                            margin="normal"
+                            name="fullname"
+                            value={this.state.user.fullname}
+                            onChange={ev => this.handleChange(ev, "fullname")}
+                            style={{ width: "100%" }}
+                            validators={["required"]}
+                            errorMessages={["this field is required"]}
+                          />
+                        </div>
+                        <div className="sign-up-form__inline-grow">
+                          <TextValidator
+                            id="home-email"
+                            label={t("home.sign-up-form.email")}
+                            margin="normal"
+                            name="email"
+                            value={this.state.user.email}
+                            onChange={ev => this.handleChange(ev, "email")}
+                            style={{ width: "100%" }}
+                            validators={["required", "isEmail"]}
+                            errorMessages={[
+                              "this field is required",
+                              "email is not valid"
+                            ]}
+                          />
+                        </div>
+                        <RoundButton
+                          label={t("home.sign-up-form.button")}
+                          type="submit"
+                          disabled={loading}
+                          loading={loading}
+                        />
+                      </ValidatorForm>
+
+                      {/* {status === "sending" && (
+                        <div style={{ color: "blue" }}>sending...</div>
+                      )}
+                      {status === "error" && (
+                        <div
+                          style={{ color: "red" }}
+                          dangerouslySetInnerHTML={{ __html: message }}
+                        />
+                      )}
+                      {status === "success" && (
+                        <div style={{ color: "green" }}>Subscribed !</div>
+                      )} */}
+                    </div>
+                  )}
+                />
+
                 <p className="headline-bottom-text">
                   {t("home.headline.headline-bottom-text")}
                 </p>
@@ -272,7 +337,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     changeLang: newLang => dispatch(changeLang(newLang)),
-    requestSignUp: user => dispatch(requestSignUp(user)),
+    requestSignUp: (user, subscribe) =>
+      dispatch(requestSignUp(user, subscribe)),
     toggleThankModal: () => dispatch(toggleThankModal()),
     toggleOopsModal: () => dispatch(toggleOopsModal())
   };

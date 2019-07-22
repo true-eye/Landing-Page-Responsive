@@ -58,7 +58,7 @@ const dictionary = {
     "about.feature-5.p":
       "An employer that is willing to offer open work permits, remote opportunities or work-abroad experience. ",
     "about.bottom-1":
-      "Guess What - Rarely is this Information Included in the Job Description!",
+      "Guess What? Rarely is this Information Included in the Job Description!",
     "about.bottom-2": "That’s where Flipptap comes in....",
     "about.form.email": "Email",
     "about.form.get-early-access": "GET EARLY ACCESS",

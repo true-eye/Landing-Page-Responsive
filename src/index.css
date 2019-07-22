@@ -44,9 +44,15 @@ body {
   font-style: normal;
 }
 @font-face {
-  font-family: "Poppins";
+  font-family: "Avenir Next";
   src: url("/fonts/Avenir Next/AvenirNext-DemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/fonts/Avenir Next/AvenirNext-DemiBold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {

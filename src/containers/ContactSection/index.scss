@@ -100,13 +100,75 @@
 .contact-form {
   margin-top: 30px;
   .MuiInputBase-root {
-    font-size: 16px !important;
-    color: #2065ff !important;
+    font-size: 18.9px;
+    line-height: 23px;
+    color: #2065ff;
   }
   .MuiFormLabel-root {
-    font-size: 16px !important;
+    font-size: 18.9px;
+    line-height: 23px;
   }
   button {
     margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .contact {
+    .section-title span {
+      margin-bottom: 13px;
+    }
+    .section-title p {
+      line-height: 20px;
+      font-size: 15px;
+      margin-top: 0px;
+    }
+    .contact-form {
+      padding: 0px 10px;
+      margin-top: 20px;
+      .MuiFormControl-marginNormal {
+        margin-top: 0px;
+        margin-bottom: 8px;
+      }
+      .MuiInputBase-root {
+        font-size: 18.9px;
+        line-height: 23px;
+      }
+      .MuiFormLabel-root {
+        font-size: 18.9px;
+        line-height: 23px;
+      }
+      button {
+        width: 100%;
+      }
+      .contact-footer {
+        margin-top: 53.4px;
+      }
+    }
+    .contact-media {
+      height: 400px;
+      &__subtitle-container {
+        font-size: 24.25px;
+        line-height: 33px;
+
+        padding: 3px 5px;
+        top: calc(70% - 70px);
+      }
+
+      &__addon-container {
+        font-size: 12px;
+        line-height: 14px;
+
+        top: calc(70% - 55px);
+      }
+
+      &__social-container {
+        top: calc(70% - 42px);
+        width: 40%;
+      }
+
+      .circle-img-button {
+        width: 27px !important;
+      }
+    }
   }
 }
